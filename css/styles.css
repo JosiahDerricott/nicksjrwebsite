@@ -1,0 +1,115 @@
+h1 {
+  =
+}
+
+#welcome {
+  background-color: #af0404;
+}
+
+.padding {
+  padding: 1% 1%;
+}
+
+.fa-yelp {
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  color: white;
+  margin: 1rem 2.5rem 1rem 0;
+}
+
+.fa-yelp:hover {
+  transform: rotate(-20deg);
+}
+
+.fa-twitter {
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  color: #1DA1F2;
+  margin: 1rem 0 1rem 2.5rem;
+}
+
+.fa-twitter:hover {
+    transform: rotate(20deg);
+}
+
+/* Articles */
+#article-divider {
+  padding: 6% 20%;
+  text-align: center;
+}
+
+.article-content {
+  padding-right: 10%;
+}
+
+.article-img {
+  border-radius: 25%;
+  width: 120%;
+  position: relative;
+  top: 5%;
+}
+
+.month-burger-img {
+  border-radius: 40%;
+  width: 50%;
+  margin: 3% 30% 3% 25%;
+}
+
+/* Burger of the Month */
+#month-burger {
+  background-color: #af0404;
+}
+
+.burger-text {
+  color: #f5eded;
+  margin-top: 10%;
+}
+
+.burger-text > h1 {
+  font-size: 3rem;
+}
+
+.burger-text > p {
+  font-size: 1.5rem;
+  margin-top: 4%;
+}
+
+.tab-content {
+  background-color: #af0404;
+  color: white;
+}
+
+.tab-text {
+  color: #252525;
+  font-weight: bold;
+  outline-color: white;
+}
+
+.tab-text:hover {
+  color: white;
+}
+
+/* Footer */
+
+#footer {
+  background-color: #3e3636;
+}
+
+/* Possibly Uneeded */
+/* .text-bubble {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  position: static;
+  vertical-align: 25px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0 2rem
+}
+
+.text-bubble-yelp {
+  float: left;
+  position: relative;
+  top: 25px;
+} */
