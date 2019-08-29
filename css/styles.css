@@ -19,7 +19,7 @@ h1 {
 }
 
 .fa-yelp:hover {
-  transform: rotate(-20deg);
+  transform: rotate(-20deg) scale(1.5);
 }
 
 .fa-twitter {
@@ -31,7 +31,7 @@ h1 {
 }
 
 .fa-twitter:hover {
-    transform: rotate(20deg);
+  transform: rotate(20deg) scale(1.5);
 }
 
 /* Articles */
