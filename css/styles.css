@@ -1,5 +1,9 @@
-h1 {
-  =
+h1, h2, h3, h4, h5, h6 {
+  font-family: PT-Serif, sans-serif;
+}
+
+p {
+  font-family: Neuton, sans-serif;
 }
 
 #welcome {
@@ -37,24 +41,36 @@ h1 {
 /* Articles */
 #article-divider {
   padding: 6% 20%;
+  background-color: #f5eded;
   text-align: center;
 }
 
 .article-content {
   padding-right: 10%;
+  vertical-align: middle;
 }
-
 .article-img {
-  border-radius: 25%;
-  width: 120%;
-  position: relative;
-  top: 5%;
+  width: 50%;
+  padding: 5% 0;
 }
 
-.month-burger-img {
-  border-radius: 40%;
-  width: 50%;
-  margin: 3% 30% 3% 25%;
+.king5-img {
+  border-radius: 30%;
+  width: 20%;
+}
+
+.img-animate {
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.img-animate:hover {
+  transform: scale(1.5);
+}
+
+.carousel-text {
+  padding-top: 5%;
 }
 
 /* Burger of the Month */
@@ -62,9 +78,13 @@ h1 {
   background-color: #af0404;
 }
 
+.burger-title {
+  font-family: Acme, serif;
+}
+
 .burger-text {
   color: #f5eded;
-  margin-top: 10%;
+  text-align: center;
 }
 
 .burger-text > h1 {
@@ -76,25 +96,53 @@ h1 {
   margin-top: 4%;
 }
 
-.tab-content {
-  background-color: #af0404;
-  color: white;
-}
-
-.tab-text {
-  color: #252525;
-  font-weight: bold;
-  outline-color: white;
-}
-
-.tab-text:hover {
-  color: white;
+.month-burger-img {
+  border-radius: 40%;
+  width: 50%;
+  margin: 3% 30% 3% 25%;
 }
 
 /* Footer */
 
 #footer {
   background-color: #3e3636;
+}
+
+/* Utility Classes */
+
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 120%;
+  }
+
+  p {
+    font-size: 60%;
+  }
+}
+
+.text-left-xs {
+    text-align: left;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .text-left-sm {
+        text-align: left;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .text-left-md {
+        text-align: left;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .text-left-lg {
+        text-align: left;
+    }
 }
 
 /* Possibly Uneeded */
