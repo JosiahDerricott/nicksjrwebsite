@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Nick Jr's</title>
+    <link rel="shortcut icon" href="images/favicon.ico"></link>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Bootstrap Scripts -->
@@ -14,83 +15,118 @@
     <link href="https://fonts.googleapis.com/css?family=Acme|PT+Serif|Fira+Sans|Francois+One|Neuton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body>
 
-    <!-- Welcom Section -->
+  <div class="overlay">
+    <body>
 
-    <section id="welcome">
-      <div class="container-fluid padding">
-        <div class="row text-center">
-          <div class="col-12">
-            <img class="img-fluid" src="images/logo_side.png" alt="Nick Jr's Logo">
-          </div>
+      <!-- Navbar -->
+
+      <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
+        <a class="navbar-brand">
+          <img class="nick-logo" src="images/nicks-logo.png" alt="Nick's Jr Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuNav" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#welcome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Contact</a>
+            </li>
+          </ul>
         </div>
+      </nav>
 
-        <div class="container padding">
+      <!-- Welcom Section -->
+
+      <section id="welcome">
+        <div class="container-fluid padding">
           <div class="row text-center">
-            <div class="col">
-              <a href="https://www.yelp.com/biz/nicks-jr-burgers-and-gyros-everett" target="_blank" title="Review us on Yelp!"><span class="logo fab fa-yelp fa-3x"></span></a>
-              <a href="https://twitter.com/NicksJrBurgers" target="_blank" title="Follow us on Twitter!"><span class="logo fab fa-twitter fa-3x"></span></a>
+            <div class="col-12">
+              <img class="img-fluid" src="images/logo_side.png" alt="Nick Jr's Logo">
+            </div>
+          </div>
+
+          <div class="container padding">
+            <div class="row text-center">
+              <div class="col">
+                <a href="https://www.yelp.com/biz/nicks-jr-burgers-and-gyros-everett" target="_blank" title="Review us on Yelp!"><span class="logo fab fa-yelp fa-3x"></span></a>
+                <a href="https://twitter.com/NicksJrBurgers" target="_blank" title="Follow us on Twitter!"><span class="logo fab fa-twitter fa-3x"></span></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- King 5 Article -->
+      <!-- King 5 Article -->
 
-    <section id="article-divider">
-      <div class="row">
-        <div class="col-sm-12">
+      <section id="article-divider">
+        <div class="row">
+          <div class="col-lg-4 my-auto">
+            <a href="https://www.liveineverett.com/blog/the-evvy-awards-everetts-best-burger-2019" target="_blank" title="Live in Everett Review"><img class="article-img img-fluid img-animate" src="images/live-in-everett-logo.png" alt="Live in Everett Review"></a>
+          </div>
+
+          <div class="col-lg-4 my-auto">
+            <a href="https://www.king5.com/article/news/the-most-decadent-burger-in-washington-is-in-everett-cheap-eats/281-130fad64-c981-4a18-8a2e-e931b8f059de" target="_blank" title="King 5 Review"><img class="article-img king5-img img-fluid img-animate" src="images/king5-logo.jpg" alt="King 5 Review"></a>
+          </div>
+
+          <div class="col-lg-4 my-auto">
+            <a href="https://www.heraldnet.com/life/try-nicks-for-a-satisfying-burger-gyro-combination/" target="_blank" title="Herald Review"><img class="article-img img-fluid img-animate" src="images/heraldnet_logo.png" alt="The Heraldsssssssssssssss Review"></a>
+          </div>
+
+          <!-- <div class="col-lg-6 my-auto">
+            <div class="container article-content">
+              <h1>As seen on King 5!</h1>
+              <p class="carousel-text">Nick's Jr. Burgers and Gyros tells you what it does, right in the name- but this local burger joint in Everett
+                is much more than that. With great prices, quality food and perhaps the most ridiculous sandwich I've ever seen,
+                Nick's Jr. is definitely worth checking out.
+                <a href="https://www.king5.com/article/news/the-most-decadent-burger-in-washington-is-in-everett-cheap-eats/281-130fad64-c981-4a18-8a2e-e931b8f059de" target="_blank" title="King 5 Article">Read More...</a></p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 my-auto">
+            <img class="article-img img-fluid" src="images/gcbc.jpg" alt="King 5 Review">
+          </div> -->
+        </div>
+      </section>
+
+      <!-- Burger of The Month -->
+
+      <section id="month-burger">
+        <div class="container-fluid padding">
           <div class="row">
             <div class="col-lg-6 my-auto">
-              <img class="article-img king5-img img-fluid img-animate" src="images/king5-logo.jpg" alt="King 5 Review">
+              <div class="img-wrapper">
+                <img class="month-burger-img img-fluid inner-img" src="images/mangoburger.jpg" alt="Burger of the Month">
+              </div>
             </div>
-
             <div class="col-lg-6 my-auto">
-              <img class="article-img img-fluid img-animate" src="images/live-in-everett-logo.png" alt="Live in Everett Review">
+              <div class="container burger-text text-left-lg">
+                <h1 class="burger-title">THE TROPICAL MANGO BURGER</h1>
+                <p>Our 1/4 pound beef patty topped with our home made Fresh Mango Salsa, Mozzarella cheese, and finished off with our home made Mango Mayo, all on a sesame bun!</p>
+                <p>Only for July, only at Nick's Jr! Try one today!!</p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- <div class="col-lg-6 my-auto">
-          <div class="container article-content">
-            <h1>As seen on King 5!</h1>
-            <p class="carousel-text">Nick's Jr. Burgers and Gyros tells you what it does, right in the name- but this local burger joint in Everett
-              is much more than that. With great prices, quality food and perhaps the most ridiculous sandwich I've ever seen,
-              Nick's Jr. is definitely worth checking out.
-              <a href="https://www.king5.com/article/news/the-most-decadent-burger-in-washington-is-in-everett-cheap-eats/281-130fad64-c981-4a18-8a2e-e931b8f059de" target="_blank" title="King 5 Article">Read More...</a></p>
-          </div>
-        </div>
+      <!-- Menu Navigation -->
 
-        <div class="col-lg-6 my-auto">
-          <img class="article-img img-fluid" src="images/gcbc.jpg" alt="King 5 Review">
-        </div> -->
-      </div>
-    </section>
+    </body>
 
-    <!-- Burger of The Month -->
-
-    <section id="month-burger">
-      <div class="container-fluid padding">
-        <div class="row">
-          <div class="col-lg-6 my-auto">
-            <img class="month-burger-img img-fluid" src="images/mangoburger.jpg" alt="Burger of the Month">
-          </div>
-          <div class="col-lg-6 my-auto">
-            <div class="container burger-text text-left-lg">
-              <h1 class="burger-title">THE TROPICAL MANGO BURGER</h1>
-              <p>Our 1/4 pound beef patty topped with our home made Fresh Mango Salsa, Mozzarella cheese, and finished off with our home made Mango Mayo, all on a sesame bun!</p>
-              <p>Only for July, only at Nick's Jr! Try one today!!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Menu Navigation -->
-
-  </body>
+  </div>
 
   <footer>
     <section id="footer">
