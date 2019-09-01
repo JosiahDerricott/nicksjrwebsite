@@ -8,4 +8,4 @@ Website made for the Nick's Jr. restaurant.
 
 •	Mobile friendly and scalable to any device
 
-Link: 
+Link: https://josiahderricott.github.io/nicksjrwebsite/
