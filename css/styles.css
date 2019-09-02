@@ -25,8 +25,12 @@ p {
 /* Navbar */
 
 .nick-logo {
-  width: 25%;
-  margin-left: 30px;
+  width: 30%;
+  margin-bottom: -13px;
+}
+
+.navbar .navbar-brand {
+  margin: 0;
 }
 
 .navbar-custom {
@@ -45,13 +49,28 @@ p {
     font-weight: bold;
     font-size: 1.15rem;
 }
+
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     color: white;
 }
 
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 575px) {
+   button.navbar-toggler {
+       position: absolute !important;
+       right: 10px !important;
+       top: 14px !important;
+   }
+}
+
 /* Welcome Section */
+
+/* FIXME: Make image move up slightly on scroll */
 
 #welcome {
     background: url(../images/nick-background.jpg) no-repeat center center fixed #af0404;
@@ -197,6 +216,19 @@ p {
 
 #footer {
   background-color: #3e3636;
+  padding: 2% 0;
+}
+
+#footer p, h2 {
+  color: #f5eded;
+}
+
+#footer p {
+  font-size: 1.15rem;
+}
+
+.copyright {
+  color: #575554;
 }
 
 /* Utility Classes */
