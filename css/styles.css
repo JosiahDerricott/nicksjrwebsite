@@ -8,11 +8,19 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: PT-Serif, sans-serif;
+  font-family: Acme, sans-serif;
 }
 
 p {
   font-family: Neuton, sans-serif;
+}
+
+hr {
+  border-color: white;
+}
+
+.padding {
+  padding: 5% 1% 1% 1%;
 }
 
 .overlay
@@ -22,8 +30,17 @@ p {
   z-index: 2;
 }
 
+.section-header
+{
+  font-size: 4rem;
+  color: #f5eded;
+  margin-bottom: 10px;
+}
+
 /* Navbar */
 
+
+/* FIXME: Remove negetive margin */
 .nick-logo {
   width: 30%;
   margin-bottom: -13px;
@@ -81,10 +98,6 @@ p {
     background-size: cover;
 }
 
-.padding {
-  padding: 5% 1% 1% 1%;
-}
-
 .fa-yelp {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -109,8 +122,47 @@ p {
   transform: rotate(20deg) scale(1.5);
 }
 
+/* Contact */
+
+.contact-padding {
+  margin: 2% 0;
+}
+
+.contact-container > h1 {
+  font-size: 4rem;
+}
+
+.contact-icon {
+  margin: 2% 0;
+}
+
+.contact-icon > p{
+  font-size: 1.2rem;
+}
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.map
+{
+  border-style: solid;
+  border-color: #af0404;
+  border-width: thick;
+}
+
 /* Articles */
-#article-divider {
+#reviews {
   padding: 6% 20%;
   background-color: #f5eded;
   text-align: center;
@@ -140,17 +192,9 @@ p {
   transform: scale(1.5);
 }
 
-.carousel-text {
-  padding-top: 5%;
-}
-
 /* Burger of the Month */
 #month-burger {
   background-color: #af0404;
-}
-
-.burger-title {
-  font-family: Acme, serif;
 }
 
 .burger-text {
@@ -158,8 +202,10 @@ p {
   text-align: center;
 }
 
-.burger-text > h1 {
-  font-size: 3rem;
+.burger-text > h2 {
+  font-family: Acme, serif;
+  font-size: 2.4rem;
+  margin-top: 20px;
 }
 
 .burger-text > p {
@@ -178,11 +224,11 @@ p {
 }
 
 .img-wrapper {
-  width: 550px;
-  height: 550px;
+  width: 500px;
+  height: 500px;
   border-radius: 30%;
   overflow: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 /* FIXME: Wrap media queries together, better center div */
@@ -210,6 +256,39 @@ p {
   transform: scale(1.1);
 }
 
+/* Menu */
+
+
+
+/* About */
+
+#about {
+  background-color: #af0404;
+}
+
+.about-img {
+  width: 60%;
+  height: 80%;
+  margin: 7% 0;
+  border-radius: 30%;
+}
+
+.about-text {
+  color: #f5eded;
+  text-align: center;
+}
+
+.about-text > h1 {
+    margin-top: 20px;
+    font-family: Acme, serif;
+    font-size: 3rem;
+}
+
+.about-text > p {
+  font-size: 1.5rem;
+  margin-top: 4%;
+}
+
 /* Footer */
 
 #footer {
@@ -223,6 +302,10 @@ p {
 
 #footer p {
   font-size: 1rem;
+}
+
+.footer-padding {
+  margin: 30px 0;
 }
 
 .copyright {
@@ -252,16 +335,30 @@ p {
   p {
     font-size: 60%;
   }
+
+  iframe
+  {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .text-left-xs {
     text-align: left;
 }
 
+.text-right-xs {
+    text-align: right;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .text-left-sm {
         text-align: left;
+    }
+
+    .text-right-sm {
+        text-align: right;
     }
 }
 
@@ -270,12 +367,20 @@ p {
     .text-left-md {
         text-align: left;
     }
+
+    .text-right-md {
+        text-align: right;
+    }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .text-left-lg {
         text-align: left;
+    }
+
+    .text-right-lg {
+        text-align: right;
     }
 }
 
