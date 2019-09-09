@@ -21,7 +21,7 @@ hr {
 }
 
 .padding {
-  padding: 5% 1% 1% 1%;
+  padding: 2% 1% 1% 1%;
 }
 
 .overlay
@@ -97,6 +97,10 @@ hr {
     position: relative;
     width: 100%;
     background-size: cover;
+}
+
+.main-logo-padding {
+  padding-top: 100px;
 }
 
 .fa-yelp {
