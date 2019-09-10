@@ -67,6 +67,10 @@ hr {
   border-color: #af0404 !important;
 }
 
+.btn-pad {
+  margin-top: 30px;
+}
+
 /* Navbar */
 
 
@@ -134,10 +138,6 @@ hr {
 
 .main-logo-padding {
   padding-top: 100px;
-}
-
-.btn-pad {
-  margin-top: 30px;
 }
 
 .fa-yelp {
