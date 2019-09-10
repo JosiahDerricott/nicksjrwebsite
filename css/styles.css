@@ -38,6 +38,35 @@ hr {
   margin-bottom: 10px;
 }
 
+/* Bootstrap Overrides */
+
+.btn-dark
+{
+  background-color: rgba(62, 54, 54, 0.85) !important;
+  color: #f5eded !important;
+  font-weight: 500;
+}
+
+.btn-dark:hover {
+  background-color: rgba(62, 54, 54, 1) !important;
+}
+
+.btn-outline-dark {
+  border-color: #af0404 !important;
+  margin-bottom: 10px;
+}
+
+.btn-outline-dark:hover
+{
+  background-color: #af0404 !important;
+  color: #f5eded !important;
+}
+
+.border-danger {
+  border-width: medium !important;
+  border-color: #af0404 !important;
+}
+
 /* Navbar */
 
 
@@ -91,16 +120,28 @@ hr {
 /* FIXME: Make image move up slightly on scroll */
 
 #welcome {
-    background: url(../images/nick-background.jpg) no-repeat center center fixed #af0404;
-    display: table;
-    height: 100%;
-    position: relative;
-    width: 100%;
-    background-size: cover;
+  background: url(../images/nick-background.jpg) no-repeat center center fixed #af0404;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
 }
 
 .main-logo-padding {
   padding-top: 100px;
+}
+
+.buttons {
+  margin: 20px 0;
+}
+
+.btn-pad {
+  margin-top: 20px;
 }
 
 .fa-yelp {
@@ -108,11 +149,11 @@ hr {
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
   color: white;
-  margin: 1rem 2.5rem 1rem 0;
+  margin: 1rem 1rem 1rem 0;
 }
 
 .fa-yelp:hover {
-  transform: rotate(-20deg) scale(1.5);
+  transform: rotate(-20deg) scale(1.2);
 }
 
 .fa-twitter {
@@ -124,7 +165,7 @@ hr {
 }
 
 .fa-twitter:hover {
-  transform: rotate(20deg) scale(1.5);
+  transform: rotate(20deg) scale(1.2);
 }
 
 /* Contact */
