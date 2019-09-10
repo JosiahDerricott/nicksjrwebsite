@@ -44,7 +44,7 @@ hr {
 {
   background-color: rgba(62, 54, 54, 0.85) !important;
   color: #f5eded !important;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 .btn-dark:hover {
@@ -136,12 +136,8 @@ hr {
   padding-top: 100px;
 }
 
-.buttons {
-  margin: 20px 0;
-}
-
 .btn-pad {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .fa-yelp {
