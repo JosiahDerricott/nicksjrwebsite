@@ -9,11 +9,11 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Acme, sans-serif;
+  font-family: Inika, sans-serif;
 }
 
 p {
-  font-family: Neuton, sans-serif;
+  font-family: Cabin, sans-serif;
 }
 
 hr {
@@ -202,11 +202,11 @@ hr {
     height:0;
 }
 .map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .map
@@ -214,6 +214,7 @@ hr {
   border-style: solid;
   border-color: #af0404;
   border-width: thick;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Articles */
@@ -257,7 +258,7 @@ hr {
 }
 
 .burger-text > h2 {
-  font-family: Acme, serif;
+  font-family: Inika, serif;
   font-size: 2.1rem;
   margin-top: 20px;
 }
@@ -334,7 +335,7 @@ hr {
 
 .about-text > h1 {
     margin-top: 20px;
-    font-family: Acme, serif;
+    font-family: Inika, serif;
 }
 
 .about-text > p {
@@ -376,6 +377,16 @@ hr {
 .logo:hover
 {
   color: white;
+}
+
+.logo-scale {
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+}
+
+.logo-scale:hover {
+  transform: scale(1.1);
 }
 
 /* Utility Classes */
