@@ -1,0 +1,24 @@
+{
+  "name": "nick-jrs",
+  "version": "1.0.0",
+  "description": "Website for the Nick Jr's Burger and Gyros resturant",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosiahDerricott/nicksjrwebsite.git"
+  },
+  "author": "Josiah Derricott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosiahDerricott/nicksjrwebsite/issues"
+  },
+  "homepage": "https://github.com/JosiahDerricott/nicksjrwebsite#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
