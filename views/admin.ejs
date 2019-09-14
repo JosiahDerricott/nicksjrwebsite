@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link rel="shortcut icon" href="images/favicon.ico"></link>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  </head>
+
+  <body>
+    <div class="admin">
+      <section id="admin-welcome">
+        <div class="container-fluid padding text-center">
+          <h1>Nick's Jr Admin</h1>
+        </div>
+      </section>
+
+      <section id="admin-display-edit">
+        <div class="container-fluid padding">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Item of the Month</h1>
+
+              <form action="/admin" method="POST">
+                <div class="form-group">
+                  <label for="burg-title">Item Name</label>
+                  <input class="form-control" style="text-transform:uppercase" type="text" name="burger-title" value="<%= burgTitle %>">
+                </div>
+
+                <div class="form-group">
+                  <label for="burg-image">Burger Image</label>
+                  <input type="file" class="form-control-file" name="burger-image" accept="image/jpeg, image/png">
+                </div>
+
+                <div class="form-group">
+                  <label for="burg-desc">Burger Description</label>
+                  <textarea class="form-control" name="burger-desc" rows="4"><%= burgDesc %></textarea>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-md-6">
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>

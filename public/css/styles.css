@@ -450,19 +450,16 @@ hr {
     }
 }
 
-/* Possibly Uneeded */
-/* .text-bubble {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-  position: static;
-  vertical-align: 25px;
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin: 0 2rem
+/* Admin Stuff */
+#admin-welcome {
+  background-color: #af0404;
 }
 
-.text-bubble-yelp {
-  float: left;
-  position: relative;
-  top: 25px;
-} */
+.admin h1 {
+  color: #f5eded;
+  font-size: 3.5rem;
+}
+
+#admin-display-edit h1 {
+  color: #3e3636;
+}
