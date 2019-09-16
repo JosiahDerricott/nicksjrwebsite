@@ -30,21 +30,34 @@
             <div class="col-md-6">
               <h1>Item of the Month</h1>
 
-              <form action="/admin" method="POST">
+              <form action="/admin" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="burg-title">Item Name</label>
-                  <input class="form-control" style="text-transform:uppercase" type="text" name="burger-title" value="<%= burgTitle %>">
+                  <input class="form-control" style="text-transform:uppercase" type="text" name="burgerTitle" value="<%= burgTitle %>">
+                </div>
+
+                <div class="row content-center">
+                  <div class="col-md-4">
+                    <img src="<%= burgImg %>" height="150" width="150" class="img-fluid thumbnail">
+                    <div class="form-group">
+                      <label for="burg-image">Item Image</label>
+                      <input type="file" name="itemMonthImage" class="form-control-file" accept="image/jpeg, image/png">
+                      <p style="color: red"><%= typeof msg != "undefined" ? msg : "" %></p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                  </div>
+
+                  <div class="col-md-4">
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="burg-image">Burger Image</label>
-                  <input type="file" class="form-control-file" name="burger-image" accept="image/jpeg, image/png">
+                  <label for="burg-desc">Item Description</label>
+                  <textarea class="form-control" name="burgerDesc" rows="4"><%= burgDesc %></textarea>
                 </div>
-
-                <div class="form-group">
-                  <label for="burg-desc">Burger Description</label>
-                  <textarea class="form-control" name="burger-desc" rows="4"><%= burgDesc %></textarea>
-                </div>
+                <button class="btn btn-primary" type="submit" name="button">Submit</button>
               </form>
             </div>
 

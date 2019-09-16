@@ -285,7 +285,7 @@ hr {
   height: 500px;
   border-radius: 30%;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
 /* FIXME: Wrap media queries together, better center div */
@@ -301,7 +301,6 @@ hr {
   .img-wrapper {
     width: 200px;
     height: 200px;
-    left: 33%;
   }
 }
 
@@ -462,4 +461,10 @@ hr {
 
 #admin-display-edit h1 {
   color: #3e3636;
+}
+
+.thumbnail {
+  margin: 8px 0;
+  border-style: solid;
+  border-color: #3e3636;
 }
