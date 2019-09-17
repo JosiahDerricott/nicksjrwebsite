@@ -12,6 +12,9 @@
   },
   "author": "Josiah Derricott",
   "license": "ISC",
+  "engines": {
+    "node": "11.9.0"
+  },
   "bugs": {
     "url": "https://github.com/JosiahDerricott/nicksjrwebsite/issues"
   },
