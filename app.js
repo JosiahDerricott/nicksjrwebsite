@@ -45,7 +45,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session(
 {
-  secret: "Our little secret.",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }));
@@ -75,7 +75,7 @@ function checkFileType(req, file, cb)
   }
 }
 
-mongoose.connect("mongodb://localhost:27017/nickDB", {useNewUrlParser: true});
+mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema(
@@ -223,7 +223,10 @@ app.route("/login")
 
 .get(function(req, res)
 {
-  res.render("login");
+  if(req.isAuthenticated())
+    res.redirect("/admin");
+  else
+    res.render("login");
 })
 
 .post(passport.authenticate("local", { failureRedirect: "/login" }), function(req, res, next)

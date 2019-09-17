@@ -452,6 +452,7 @@ hr {
 /* Login Stuff */
 .login-form {
   background-image: linear-gradient(#af0404, #ff0000);
+  box-shadow: 4px 4px black;
 }
 
 /* Admin Stuff */
