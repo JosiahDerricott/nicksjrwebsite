@@ -75,7 +75,9 @@ function checkFileType(req, file, cb)
   }
 }
 
-mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true});
+const dbConnection = "mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@maincluster-fi5qw.mongodb.net/" + process.env.DB_NAME;
+
+mongoose.connect(dbConnection, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema(
