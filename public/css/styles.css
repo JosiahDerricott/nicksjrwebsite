@@ -449,17 +449,22 @@ hr {
     }
 }
 
-/* Admin Stuff */
-#admin-welcome {
-  background-color: #af0404;
+/* Login Stuff */
+.login-form {
+  background-image: linear-gradient(#af0404, #ff0000);
 }
 
-.admin h1 {
-  color: #f5eded;
+/* Admin Stuff */
+#admin h1 {
   font-size: 3.5rem;
 }
 
-#admin-display-edit h1 {
+.admin-welcome {
+  background-color: #af0404;
+  color: #f5eded;
+}
+
+.admin-display-edit h1 {
   color: #3e3636;
 }
 

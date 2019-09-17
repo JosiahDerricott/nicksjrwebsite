@@ -17,14 +17,20 @@
   </head>
 
   <body>
-    <div class="admin">
-      <section id="admin-welcome">
+    <section id="admin">
+      <div class="admin-welcome">
         <div class="container-fluid padding text-center">
           <h1>Nick's Jr Admin</h1>
-        </div>
-      </section>
 
-      <section id="admin-display-edit">
+          <form action="/logout" method="POST">
+            <div class="form-group">
+              <button class="btn btn-dark btn-lg border border-danger" type="submit" name="button">Logout</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="admin-display-edit">
         <div class="container-fluid padding">
           <div class="row">
             <div class="col-md-6">
@@ -51,7 +57,7 @@
                   <label for="burg-desc">Item Description</label>
                   <textarea class="form-control" name="burgerDesc" rows="4"><%= burgDesc %></textarea>
                 </div>
-                <button class="btn btn-primary" type="submit" name="button">Submit</button>
+                <button class="btn btn-dark border border-danger" type="submit" name="button">Submit</button>
               </form>
             </div>
 
@@ -60,6 +66,6 @@
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </body>

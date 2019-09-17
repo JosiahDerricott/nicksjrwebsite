@@ -1,11 +1,15 @@
 //jshint esversion:6
 
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const multer = require("multer");
 const jimp = require("jimp");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 const path = require("path");
 const fs = require("fs");
 
@@ -39,6 +43,16 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(session(
+{
+  secret: "Our little secret.",
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Check file type
 function checkFileType(req, file, cb)
 {
@@ -62,6 +76,22 @@ function checkFileType(req, file, cb)
 }
 
 mongoose.connect("mongodb://localhost:27017/nickDB", {useNewUrlParser: true});
+mongoose.set("useCreateIndex", true);
+
+const userSchema = new mongoose.Schema(
+{
+  username: String,
+  password: String
+});
+
+userSchema.plugin(passportLocalMongoose);
+
+const User = new mongoose.model("User", userSchema);
+
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 const articleSchema = new mongoose.Schema({
   id: String,
@@ -86,22 +116,14 @@ async function initArticles(req, res, next)
 /* Sets up the local vars by pulling from the database */
 async function setItemMonthArticle ()
 {
-  console.log("Called Set");
-
   await Article.findOne({id: "item-month"}, function(err, article)
   {
     if(err)
       console.log(err);
     else
     {
-      console.log("Else");
-
       if(article) // Article exists
       {
-        console.log("Found Article");
-
-        console.log(article.title);
-
         burgerTitle = article.title;
         burgerDesc = article.content;
         burgerImg = article.img;
@@ -110,8 +132,6 @@ async function setItemMonthArticle ()
       }
       else
       {
-        console.log("Did not find");
-
         const itemMonthArticle = new Article({
           id: "item-month",
           title: burgerTitle,
@@ -199,12 +219,34 @@ app.get("/", initArticles, function(req, res)
   res.render("index", {burgImg: burgerImg, burgTitle: burgerTitle, burgDesc: burgerDesc});
 });
 
+app.route("/login")
+
+.get(function(req, res)
+{
+  res.render("login");
+})
+
+.post(passport.authenticate("local", { failureRedirect: "/login" }), function(req, res, next)
+{
+  res.redirect("/admin");
+});
+
+app.route("/logout")
+
+.post(function(req, res)
+{
+  req.logout();
+  res.redirect("/login");
+});
+
 app.route("/admin")
 
 .get(initArticles, function(req, res)
 {
-  console.log("We render first");
-  res.render("admin", {burgTitle: burgerTitle, burgDesc: burgerDesc, burgImg: burgerImg});
+  if(req.isAuthenticated())
+    res.render("admin", {burgTitle: burgerTitle, burgDesc: burgerDesc, burgImg: burgerImg});
+  else
+    res.redirect("/login");
 })
 
 .post(function(req, res)
