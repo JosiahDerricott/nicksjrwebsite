@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cabin|Inika:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cabin|Inika:700|Anton|Roboto+Condensed&display=swap");
 
 html, body {
   height: 100%;
@@ -11,7 +11,7 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Inika, sans-serif;
+  font-family: Inika, serif;
 }
 
 p {
@@ -219,7 +219,17 @@ hr {
   box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Menu */
+.divider-img {
+  margin-top: 20px;
+}
+
+.devil-head-img {
+  width: 400px;
+}
+
 /* Articles */
+
 #reviews {
   padding: 6% 20%;
   text-align: center;
@@ -311,10 +321,6 @@ hr {
 .inner-img:hover {
   transform: scale(1.1);
 }
-
-/* Menu */
-
-
 
 /* About */
 
