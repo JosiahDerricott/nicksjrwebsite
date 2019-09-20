@@ -3,7 +3,8 @@
 html, body {
   height: 100%;
   width: 100%;
-  background-color: #f5eded;
+  /*background-color: #f5eded;*/
+  background-color: #af0404;
 }
 
 html {
@@ -168,8 +169,12 @@ hr {
 
 /* Contact */
 
+#contact {
+  background-color: #f5eded;
+}
+
 .contact-padding {
-  margin: 2% 0;
+  padding: 2% 0;
 }
 
 .contact-container > h1 {
@@ -217,46 +222,6 @@ hr {
   border-color: #af0404;
   border-width: thick;
   box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Menu */
-.divider-img {
-  margin-top: 20px;
-}
-
-.devil-head-img {
-  width: 400px;
-}
-
-/* Articles */
-
-#reviews {
-  padding: 6% 20%;
-  text-align: center;
-}
-
-.article-content {
-  padding-right: 10%;
-  vertical-align: middle;
-}
-.article-img {
-  width: 65%;
-  padding: 5% 0;
-}
-
-.king5-img {
-  border-radius: 30%;
-  width: 30%;
-}
-
-.img-animate {
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-}
-
-.img-animate:hover {
-  transform: scale(1.5);
 }
 
 /* Burger of the Month */
@@ -348,6 +313,52 @@ hr {
 .about-text > p {
   font-size: 1.5rem;
   margin-top: 4%;
+}
+
+/* Divider */
+
+#divider {
+  background-color: #f5eded;
+}
+
+.divider-img {
+  padding-top: 20px;
+}
+
+.devil-head-img {
+  width: 400px;
+}
+
+/* Articles */
+
+#reviews {
+  padding: 6% 20%;
+  text-align: center;
+  background-color: #f5eded;
+}
+
+.article-content {
+  padding-right: 10%;
+  vertical-align: middle;
+}
+.article-img {
+  width: 65%;
+  padding: 5% 0;
+}
+
+.king5-img {
+  border-radius: 30%;
+  width: 30%;
+}
+
+.img-animate {
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.img-animate:hover {
+  transform: scale(1.5);
 }
 
 /* Footer */
@@ -453,6 +464,35 @@ hr {
     .text-right-lg {
         text-align: right;
     }
+}
+
+/* Menu Stuff */
+
+.menu-bk {
+  background: url(../images/nick-background.jpg) no-repeat bottom center fixed #f5eded;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+
+.menu-logo {
+  padding: 25px 0;
+  background-color: #f5eded;
+}
+
+.menu-divider {
+  padding: 5px 0;
+  background-color: #3e3636;
+}
+
+.menu-img {
+  padding: 2%;
 }
 
 /* Login Stuff */

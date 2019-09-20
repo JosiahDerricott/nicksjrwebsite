@@ -216,7 +216,14 @@ async function updateItemMonthArticle(req, res)
 
 app.get("/", initArticles, function(req, res)
 {
-  res.render("index", {burgImg: burgerImg, burgTitle: burgerTitle, burgDesc: burgerDesc});
+  res.render("index", { burgImg: burgerImg, burgTitle: burgerTitle, burgDesc: burgerDesc, pageTitle: "Nick's Jr" });
+});
+
+app.route("/menu")
+
+.get(function(req, res)
+{
+  res.render("menu", { pageTitle: "Menu" });
 });
 
 app.route("/login")
@@ -226,7 +233,7 @@ app.route("/login")
   if(req.isAuthenticated())
     res.redirect("/admin");
   else
-    res.render("login");
+    res.render("login", { pageTitle: "Login" });
 })
 
 .post(passport.authenticate("local", { failureRedirect: "/login" }), function(req, res, next)
@@ -247,7 +254,7 @@ app.route("/admin")
 .get(initArticles, function(req, res)
 {
   if(req.isAuthenticated())
-    res.render("admin", {burgTitle: burgerTitle, burgDesc: burgerDesc, burgImg: burgerImg});
+    res.render("admin", { burgTitle: burgerTitle, burgDesc: burgerDesc, burgImg: burgerImg, pageTitle: "Admin" });
   else
     res.redirect("/login");
 })
@@ -292,7 +299,8 @@ app.route("/admin")
           msg: req.fileValidError,
           burgTitle: burgerTitle,
           burgDesc: burgerDesc,
-          burgImg: burgerImg
+          burgImg: burgerImg,
+          pageTitle: "Admin"
         });
       }
       else
@@ -304,7 +312,8 @@ app.route("/admin")
             msg: "Success! Section updated!",
             burgTitle: burgerTitle,
             burgDesc: burgerDesc,
-            burgImg: burgerImg
+            burgImg: burgerImg,
+            pageTitle: "Admin"
           });
         }
         else
@@ -361,7 +370,8 @@ app.route("/admin")
               msg: "Success! Section updated!",
               burgTitle: burgerTitle,
               burgDesc: burgerDesc,
-              burgImg: burgerImg
+              burgImg: burgerImg,
+              pageTitle: "Admin"
             });
           });
         }

@@ -2,34 +2,7 @@
 
 <div class="overlay">
 
-  <!-- Navbar -->
-
-  <nav class="navbar fixed-top navbar-expand-lg navbar-custom">
-    <a class="navbar-brand">
-      <img class="nick-logo" src="images/devil-logo.png" alt="Nick's Jr Logo">
-    </a>
-
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#menuNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="menuNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#welcome">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#menu">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <%- include("partials/navbar") %>
 
   <!-- Welcom Section -->
 
@@ -127,8 +100,8 @@
   </div>
 </section>
 
-<!-- Menu Navigation -->
-<section id="menu">
+<!-- Divider -->
+<section id="divider">
   <div class="container-fluid divider-img">
     <div class="row d-flex justify-content-center">
       <div class="col text-center">
