@@ -1,43 +1,42 @@
 <%- include("partials/header") %>
 
-  <div class="overlay">
-    <section id="menu">
-      <div class="menu-header">
-        <div class="container-fluid menu-bk menu-logo">
-          <div class="row">
-            <div class="col text-center">
-              <img class="img-fluid" src="images/nicks-logo.png" alt="nick-logo">
-            </div>
+  <section id="menu">
+    <div class="menu-header">
+      <div class="container-fluid menu-bk menu-overlay menu-container">
+        <div class="row text-center">
+          <div class="col">
+            <img class="img-fluid menu-logo menu-forward" src="images/menu-logo.png" alt="nick-logo">
           </div>
         </div>
 
-        <div class="container-fluid menu-divider">
-          <div class="row">
-            <div class="col text-center">
-
-            </div>
-          </div>
-        </div>
-
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-4 text-center menu-img">
-              <img class="img-fluid" src="images/menu01-new.jpg" alt="nick-logo">
-            </div>
-
-            <div class="col-lg-4 text-center menu-img">
-              <img class="img-fluid" src="images/menu02.jpg" alt="nick-logo">
-            </div>
-
-            <div class="col-lg-4 text-center menu-img">
-              <img class="img-fluid" src="images/menu03.jpg" alt="nick-logo">
-            </div>
+        <div class="row text-center">
+          <div class="col">
+            <a href="/"><button type="button" class="btn btn-dark btn-lg btn-pad border border-danger menu-forward">Return Home</button></a>
           </div>
         </div>
       </div>
-    </section>
 
-  </div>
+      <div class="container-fluid menu-divider"></div>
+    </div>
+  </section>
+
+  <section id="menu-items">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 text-center menu-img">
+          <img class="img-fluid" src="images/menu01-new.jpg" alt="nick-logo">
+        </div>
+
+        <div class="col-lg-4 text-center menu-img">
+          <img class="img-fluid" src="images/menu02.jpg" alt="nick-logo">
+        </div>
+
+        <div class="col-lg-4 text-center menu-img">
+          <img class="img-fluid" src="images/menu03.jpg" alt="nick-logo">
+        </div>
+      </div>
+    </div>
+  </section>
 
   </body>
 </html>

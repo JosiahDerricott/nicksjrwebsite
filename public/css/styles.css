@@ -469,7 +469,7 @@ hr {
 /* Menu Stuff */
 
 .menu-bk {
-  background: url(../images/nick-background.jpg) no-repeat bottom center fixed #f5eded;
+  background: url(../images/nick-background.jpg) no-repeat center bottom fixed #f5eded;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -481,14 +481,39 @@ hr {
   background-size: cover;
 }
 
-.menu-logo {
-  padding: 25px 0;
+.menu-overlay {
+  position: relative;
+}
+
+.menu-overlay:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(175, 4, 4, 0.5);
+}
+
+.menu-container {
+  padding: 50px 0;
   background-color: #f5eded;
+}
+
+.menu-forward {
+  position: relative;
+  z-index: 10;
+}
+
+.menu-logo {
+  width: 420px;
+  height: auto;
 }
 
 .menu-divider {
   padding: 5px 0;
-  background-color: #3e3636;
+  background-color: #fac019;
 }
 
 .menu-img {
@@ -509,6 +534,10 @@ hr {
 .admin-welcome {
   background-color: #af0404;
   color: #f5eded;
+}
+
+.admin-display-edit {
+  background-color: #f5eded;
 }
 
 .admin-display-edit h1 {
