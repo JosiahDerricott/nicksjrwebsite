@@ -514,6 +514,7 @@ hr {
 .menu-divider {
   padding: 5px 0;
   background-color: #fac019;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 .menu-img {
