@@ -1,5 +1,6 @@
 <%- include("partials/header") %>
 
+  <body>
     <section id="admin">
       <div class="admin-welcome">
         <div class="container-fluid padding text-center">
@@ -15,11 +16,13 @@
 
       <div class="admin-display-edit">
         <div class="container-fluid padding">
+          <p style="color: red"><%= typeof msgItem != "undefined" ? msgItem : "" %></p>
+
           <div class="row">
             <div class="col-md-6">
               <h1>Item of the Month</h1>
 
-              <form action="/admin" method="POST" enctype="multipart/form-data">
+              <form action="/admin/submit/monthly" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                   <label for="burg-title">Item Name</label>
                   <input class="form-control" type="text" name="burgerTitle" value="<%= burgTitle %>">
@@ -31,7 +34,6 @@
                     <div class="form-group">
                       <label for="burg-image">Item Image</label>
                       <input type="file" name="itemMonthImage" class="form-control-file" accept="image/jpeg, image/png">
-                      <p style="color: red"><%= typeof msg != "undefined" ? msg : "" %></p>
                     </div>
                   </div>
                 </div>
@@ -45,31 +47,7 @@
             </div>
 
             <div class="col-md-6">
-              <h1>About</h1>
 
-              <form action="/admin/submit/about" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                  <label for="about-title">Title</label>
-                  <input class="form-control" type="text" name="aboutTitle" value="<%= burgTitle %>">
-                </div>
-
-                <div class="row">
-                  <div class="col-md-4">
-                    <img src="<%= aboutImg %>" height="150" width="150" class="img-fluid thumbnail">
-                    <div class="form-group">
-                      <label for="about-image">Item Image</label>
-                      <input type="file" name="aboutImg" class="form-control-file" accept="image/jpeg, image/png">
-                      <p style="color: red"><%= typeof msg != "undefined" ? msg : "" %></p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="about-desc">Body</label>
-                  <textarea class="form-control" name="aboutDesc" rows="4"><%= aboutDesc %></textarea>
-                </div>
-                <button class="btn btn-dark border border-danger" type="submit" name="button">Submit</button>
-              </form>
             </div>
           </div>
         </div>

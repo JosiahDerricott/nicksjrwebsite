@@ -1,156 +1,158 @@
 <%- include("partials/header") %>
 
-<div class="overlay">
+<body>
+  <div class="overlay">
 
-  <%- include("partials/navbar") %>
+    <%- include("partials/navbar") %>
 
-  <!-- Welcom Section -->
+    <!-- Welcom Section -->
 
-  <section id="welcome" class="overlay">
-    <div class="container-fluid main-logo-padding overlay">
-      <div class="row text-center">
-        <div class="col-12">
-          <img class="img-fluid" src="images/logo_side.png" alt="Nick Jr's Logo">
+    <section id="welcome" class="overlay">
+      <div class="container-fluid main-logo-padding overlay">
+        <div class="row text-center">
+          <div class="col-12">
+            <img class="img-fluid" src="images/logo_side.png" alt="Nick Jr's Logo">
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <div class="col">
+            <a href="/menu"><button type="button" class="btn btn-dark btn-lg btn-pad border border-danger">View Menu</button></a>
+          </div>
+        </div>
+
+        <div class="container padding">
+          <div class="row d-flex justify-content-center">
+            <div class="col-4 text-right my-auto">
+              <a href="https://www.yelp.com/biz/nicks-jr-burgers-and-gyros-everett" target="_blank" title="Review us on Yelp!"><span class="fab fa-yelp fa-3x"></span></a>
+            </div>
+
+            <div class="col-4 text-left my-auto">
+              <a href="https://twitter.com/NicksJrBurgers" target="_blank" title="Follow us on Twitter!"><span class="fab fa-twitter fa-3x"></span></a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+  </div>
 
-      <div class="row text-center">
-        <div class="col">
-          <a href="/menu"><button type="button" class="btn btn-dark btn-lg btn-pad border border-danger">View Menu</button></a>
-        </div>
-      </div>
+  <!-- Contact -->
 
-      <div class="container padding">
-        <div class="row d-flex justify-content-center">
-          <div class="col-4 text-right my-auto">
-            <a href="https://www.yelp.com/biz/nicks-jr-burgers-and-gyros-everett" target="_blank" title="Review us on Yelp!"><span class="fab fa-yelp fa-3x"></span></a>
+  <section id="contact">
+    <div class="container-fluid contact-padding">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-4 text-center my-auto contact-container">
+          <h1>Join Us!</h1>
+
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-4 text-center my-auto contact-info">
+              <span class="contact-icon fas fa-map-marker-alt fa-2x"></span><p>5821 Evergreen Way<br>Everett WA</p>
+            </div>
+
+            <div class="col-md-4 text-center my-auto contact-info">
+              <span class="contact-icon fas fa-phone fa-2x"></span><p>(425) 347-6037</p>
+            </div>
           </div>
 
-          <div class="col-4 text-left my-auto">
-            <a href="https://twitter.com/NicksJrBurgers" target="_blank" title="Follow us on Twitter!"><span class="fab fa-twitter fa-3x"></span></a>
+          <div class="row">
+            <div class="col text-center my-auto contact-padding contact-info">
+              <p>Mon-Sat: 10:30AM - 9:00PM
+              <br>Sunday: 11:00AM - 9:00PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 content-center my-auto">
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2672.576913368181!2d-122.21846764860123!3d47.94456707910654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54900092d920addb%3A0x1d99c6347bf1ed22!2s5821%20Evergreen%20Way%2C%20Everett%2C%20WA%2098203!5e0!3m2!1sen!2sus!4v1567938855232!5m2!1sen!2sus" width="400" height="250" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col text-center my-auto">
+          <div class="container">
+            <a href="#reviews"><button type="button" class="btn btn-outline-dark btn-pad">See what others think</button></a>
           </div>
         </div>
       </div>
     </div>
   </section>
-</div>
 
-<!-- Contact -->
+  <!-- Burger of The Month -->
 
-<section id="contact">
-  <div class="container-fluid contact-padding">
-    <div class="row d-flex justify-content-center">
-      <div class="col-lg-4 text-center my-auto contact-container">
-        <h1>Join Us!</h1>
-
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-4 text-center my-auto contact-info">
-            <span class="contact-icon fas fa-map-marker-alt fa-2x"></span><p>5821 Evergreen Way<br>Everett WA</p>
-          </div>
-
-          <div class="col-md-4 text-center my-auto contact-info">
-            <span class="contact-icon fas fa-phone fa-2x"></span><p>(425) 347-6037</p>
+  <section id="month-burger">
+    <div class="container-fluid padding">
+      <div class="row my-auto content-center">
+        <div class="col-lg-6 my-auto content-center">
+          <div class="img-wrapper content-center">
+            <img class="month-burger-img img-fluid inner-img" src="<%= burgImg %>" alt="Item of the Month">
           </div>
         </div>
-
-        <div class="row">
-          <div class="col text-center my-auto contact-padding contact-info">
-            <p>Mon-Sat: 10:30AM - 9:00PM
-            <br>Sunday: 11:00AM - 9:00PM</p>
+        <div class="col-lg-6 my-auto">
+          <div class="container burger-text text-left-lg">
+            <h1 class="section-header">Item of the Month</h1>
+            <hr>
+            <h2><%= burgTitle %></h2>
+            <p><%= burgDesc %></p>
           </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 content-center my-auto">
-        <div class="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2672.576913368181!2d-122.21846764860123!3d47.94456707910654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54900092d920addb%3A0x1d99c6347bf1ed22!2s5821%20Evergreen%20Way%2C%20Everett%2C%20WA%2098203!5e0!3m2!1sen!2sus!4v1567938855232!5m2!1sen!2sus" width="400" height="250" frameborder="0" allowfullscreen=""></iframe>
         </div>
       </div>
     </div>
+  </section>
 
+  <!-- Divider -->
+  <section id="divider">
+    <div class="container-fluid divider-img">
+      <div class="row d-flex justify-content-center">
+        <div class="col text-center">
+          <img class="img-fluid devil-head-img" src="images/devil-logo-outline.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+
+  <section id="about">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 my-auto">
+          <div class="container about-text text-right-lg">
+            <h1 class="section-header">Our Story</h1>
+            <hr>
+            <p>We are a gourmet burger and gyro restaurant. We use 100% fresh ground beef, hand-made daily (never frozen!) and char-broiled to perfection.
+              We offer a variety of specialty burgers with a twist, plus classic favorites and gyros as well!
+              <br><br>With over three decades of restaurant experience,
+              including the famous Zorba's Pizza in Mukilteo and the classic McGrath's in Ballard, Nick's Jr. is the latest restaurant from restaurateur Nick Demonakos.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 my-auto content-center">
+          <img class="img-fluid inner-img about-img" src="images/burger01.jpg" alt="burgerpicture">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+
+  <section id="reviews">
     <div class="row">
-      <div class="col text-center my-auto">
-        <div class="container">
-          <a href="#reviews"><button type="button" class="btn btn-outline-dark btn-pad">See what others think</button></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Burger of The Month -->
-
-<section id="month-burger">
-  <div class="container-fluid padding">
-    <div class="row my-auto content-center">
-      <div class="col-lg-6 my-auto content-center">
-        <div class="img-wrapper content-center">
-          <img class="month-burger-img img-fluid inner-img" src="<%= burgImg %>" alt="Item of the Month">
-        </div>
-      </div>
-      <div class="col-lg-6 my-auto">
-        <div class="container burger-text text-left-lg">
-          <h1 class="section-header">Item of the Month</h1>
-          <hr>
-          <h2><%= burgTitle %></h2>
-          <p><%= burgDesc %></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Divider -->
-<section id="divider">
-  <div class="container-fluid divider-img">
-    <div class="row d-flex justify-content-center">
-      <div class="col text-center">
-        <img class="img-fluid devil-head-img" src="images/devil-logo-outline.png" alt="">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- About -->
-
-<section id="about">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-6 my-auto">
-        <div class="container about-text text-right-lg">
-          <h1 class="section-header">Our Story</h1>
-          <hr>
-          <p>We are a gourmet burger and gyro restaurant. We use 100% fresh ground beef, hand-made daily (never frozen!) and char-broiled to perfection.
-            We offer a variety of specialty burgers with a twist, plus classic favorites and gyros as well!
-            <br><br>With over three decades of restaurant experience,
-            including the famous Zorba's Pizza in Mukilteo and the classic McGrath's in Ballard, Nick's Jr. is the latest restaurant from restaurateur Nick Demonakos.
-          </p>
-        </div>
+      <div class="col-lg-4 my-auto">
+        <a href="https://www.liveineverett.com/blog/the-evvy-awards-everetts-best-burger-2019" target="_blank" title="Live in Everett Review"><img class="article-img img-fluid img-animate" src="images/live-in-everett-logo.png" alt="Live in Everett Review"></a>
       </div>
 
-      <div class="col-lg-6 my-auto content-center">
-        <img class="img-fluid inner-img about-img" src="images/burger01.jpg" alt="burgerpicture">
+      <div class="col-lg-4 my-auto">
+        <a href="https://www.king5.com/article/news/the-most-decadent-burger-in-washington-is-in-everett-cheap-eats/281-130fad64-c981-4a18-8a2e-e931b8f059de" target="_blank" title="King 5 Review"><img class="article-img king5-img img-fluid img-animate" src="images/king5-logo.jpg" alt="King 5 Review"></a>
+      </div>
+
+      <div class="col-lg-4 my-auto">
+        <a href="https://www.heraldnet.com/life/try-nicks-for-a-satisfying-burger-gyro-combination/" target="_blank" title="Herald Review"><img class="article-img img-fluid img-animate" src="images/heraldnet_logo.png" alt="The Heraldsssssssssssssss Review"></a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Reviews -->
-
-<section id="reviews">
-  <div class="row">
-    <div class="col-lg-4 my-auto">
-      <a href="https://www.liveineverett.com/blog/the-evvy-awards-everetts-best-burger-2019" target="_blank" title="Live in Everett Review"><img class="article-img img-fluid img-animate" src="images/live-in-everett-logo.png" alt="Live in Everett Review"></a>
-    </div>
-
-    <div class="col-lg-4 my-auto">
-      <a href="https://www.king5.com/article/news/the-most-decadent-burger-in-washington-is-in-everett-cheap-eats/281-130fad64-c981-4a18-8a2e-e931b8f059de" target="_blank" title="King 5 Review"><img class="article-img king5-img img-fluid img-animate" src="images/king5-logo.jpg" alt="King 5 Review"></a>
-    </div>
-
-    <div class="col-lg-4 my-auto">
-      <a href="https://www.heraldnet.com/life/try-nicks-for-a-satisfying-burger-gyro-combination/" target="_blank" title="Herald Review"><img class="article-img img-fluid img-animate" src="images/heraldnet_logo.png" alt="The Heraldsssssssssssssss Review"></a>
-    </div>
-  </div>
-</section>
+  </section>
+</body>
 
 <%- include("partials/footer") %>

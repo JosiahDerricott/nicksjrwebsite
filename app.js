@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+const cookieParser = require("cookie-parser");
 const path = require("path");
 const fs = require("fs");
 
@@ -42,6 +43,7 @@ const app = express();
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use(session(
 {
@@ -102,21 +104,24 @@ const articleSchema = new mongoose.Schema({
 
 const Article = mongoose.model("Article", articleSchema);
 
+
 let burgerTitle = "";
 let burgerDesc = "";
 let burgerImg = "";
 
 async function initArticles(req, res, next)
 {
-  await setItemMonthArticle();
-
-  next();
+  await setItemMonthArticle(function()
+  {
+    next();
+  });
 }
 
 /* Sets up the local vars by pulling from the database */
-async function setItemMonthArticle ()
+async function setItemMonthArticle (next)
 {
-  await Article.findOne({id: "item-month"}, function(err, article)
+  await Article.findOne({id: "item-month"})
+  .exec(function(err, article)
   {
     if(err)
       console.log(err);
@@ -144,6 +149,8 @@ async function setItemMonthArticle ()
         itemMonthArticle.save();
       }
     }
+
+    next();
   });
 }
 
@@ -160,7 +167,7 @@ async function resizeImg(imgPath)
     });
 }
 
-async function updateItemMonthArticle(req, res)
+async function updateItemMonthArticle(req, res, next)
 {
   console.log("Called Update");
   console.log("In update: " + burgerImg);
@@ -171,11 +178,10 @@ async function updateItemMonthArticle(req, res)
   {
     console.log("Local: " + localImg + " Global: " + burgerImg);
 
-    await resizeImg("./public" + localImg);
-
-    await Article.findOne({id: "item-month"}, function(err, article)
+    await Article.findOne({id: "item-month"}).exec(function(err, article)
     {
       console.log("Local: " + localImg + " Global: " + burgerImg);
+
       if(article)
       {
         console.log("Update Found Article");
@@ -211,7 +217,12 @@ async function updateItemMonthArticle(req, res)
     });
   }
 
-  setItemMonthArticle(); // Update to new values
+  await setItemMonthArticle(function()
+  {
+    console.log("CALLING NEXT");
+
+    next();
+  });
 }
 
 app.get("/", initArticles, function(req, res)
@@ -253,15 +264,36 @@ app.route("/admin")
 
 .get(initArticles, function(req, res)
 {
+  console.log("GET ADMIN");
+
+  const msg = req.cookies["pageMsg"];
+
+  console.log(msg);
+
   if(req.isAuthenticated())
-    res.render("admin", { burgTitle: burgerTitle, burgDesc: burgerDesc, burgImg: burgerImg, pageTitle: "Admin" });
+  {
+    res.render("admin",
+    {
+      msgItem: msg,
+      burgTitle: burgerTitle,
+      burgDesc: burgerDesc,
+      burgImg: burgerImg,
+      pageTitle: "Admin"
+    });
+  }
   else
+  {
     res.redirect("/login");
-})
+  }
+});
+
+app.route("/admin/submit/monthly")
 
 .post(function(req, res)
 {
   console.log("Post start: " + burgerImg);
+
+  req.pageMsg = "";
 
   upload(req, res, function(err)
   {
@@ -278,6 +310,8 @@ app.route("/admin")
 
       if(burgerImg === "")
       {
+        console.log("No burg image");
+
         Article.findOne({id: "item-month"}, function(err, article)
         {
           if(err)
@@ -294,27 +328,17 @@ app.route("/admin")
 
       if(req.fileValidError != undefined)
       {
-        res.render("admin",
-        {
-          msg: req.fileValidError,
-          burgTitle: burgerTitle,
-          burgDesc: burgerDesc,
-          burgImg: burgerImg,
-          pageTitle: "Admin"
-        });
+        console.log("VALID ERROR");
+
+        req.pageMsg = req.fileValidError;
       }
       else
       {
         if(req.file == undefined)
         {
-          res.render("admin",
-          {
-            msg: "Success! Section updated!",
-            burgTitle: burgerTitle,
-            burgDesc: burgerDesc,
-            burgImg: burgerImg,
-            pageTitle: "Admin"
-          });
+          console.log("No file");
+
+          req.pageMsg = "Success! Section updated!";
         }
         else
         {
@@ -360,25 +384,33 @@ app.route("/admin")
             console.log("Burger image was empty!: " + burgerImg);
           }
 
-          burgerImg = req.file.path.substring(6); // set burgerImg as the file path to image
+          burgerImg = req.file.path.substring(6);
           console.log("In post: " + burgerImg);
 
           resizeImg("./public" + burgerImg).then(() =>
           {
-            res.render("admin",
-            {
-              msg: "Success! Section updated!",
-              burgTitle: burgerTitle,
-              burgDesc: burgerDesc,
-              burgImg: burgerImg,
-              pageTitle: "Admin"
-            });
+            req.pageMsg = "Success! Section updated!";
+
+            return;
           });
         }
       }
 
       console.log("Img before Send: " + burgerImg);
-      updateItemMonthArticle(req, res);
+
+      updateItemMonthArticle(req, res, function()
+      {
+        console.log("Then Ran");
+
+        const options = {
+          maxAge: 2000,
+          httpOnly: true
+        }
+
+        res.cookie("pageMsg", req.pageMsg, options);
+
+        res.redirect("/admin");
+      });
     }
   });
 });
