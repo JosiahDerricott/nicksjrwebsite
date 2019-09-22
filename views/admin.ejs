@@ -11,11 +11,18 @@
               <button class="btn btn-dark btn-lg border border-danger" type="submit" name="button">Logout</button>
             </div>
           </form>
+
+          <div class="row text-center">
+            <div class="col">
+              <a href="/"><button type="button" class="btn btn-dark btn-lg border border-danger">View Page</button></a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="admin-display-edit">
         <div class="container-fluid padding">
+
           <p style="color: red"><%= typeof msgItem != "undefined" ? msgItem : "" %></p>
 
           <div class="row">
